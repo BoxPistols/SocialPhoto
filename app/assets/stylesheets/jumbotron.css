@@ -1,0 +1,26 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+  padding-top: 3.5rem;
+}
+
+.jumbotron {
+    padding-top: var(--jumbotron-padding-y);
+    padding-bottom: var(--jumbotron-padding-y);
+    margin-bottom: 0;
+    background-color: #ff0089 !important;
+}
+
+.login {
+    padding-left: 12px;
+}
+
+.buttonlogin {
+
+     padding-left: 14px;
+} 
+
+
+.rose {
+    background-color: #ff0089 !important;
+    border-color: #ff0089 !important;
+}

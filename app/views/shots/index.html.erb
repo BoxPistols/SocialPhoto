@@ -1,0 +1,104 @@
+
+
+
+
+<main role="main">
+
+      <%= render 'hero' %>
+
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            <% @shots.each do |shot| %>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                
+               <%= link_to shot, class:"shot" do %>
+
+                <%= image_tag(shot.user_shot_url, class: "card-img-top") %>
+               
+
+               <% end %>
+                <div class="card-body">
+                  <p class="card-text"><%= shot.title %></p>
+                  <p class="card-text"><%= truncate(shot.description, length: 60)  %></p>
+                  <p class="card-text"><%= time_ago_in_words(shot.created_at) %></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                   
+
+                   <div class="level-item views">
+                    <%= link_to shot do %>
+                  <span class="icon data"><i class="fa fa-eye"></i></span>
+                  <%= shot.impressionist_count %>
+                <% end %>
+              </div>
+
+                <div class="level-item comments data">
+
+                <%= link_to shot do %>
+                  <span class="icon data"><i class="fa fa-comment"></i></span>
+                  <%= shot.comments.count %>
+                <% end %>
+
+              </div>
+
+
+                <div class="level-item likes">
+        
+        <% if user_signed_in? %> 
+        <% if  current_user.liked? shot %>
+        <%= link_to unlike_shot_path(shot), method: :put, class: "unlike_shot" do %>
+          <span class="icon"><i class="fa fa-heart has-text-primary" aria-hidden="true"></i></span>
+          <span class="vote_count"><%= shot.get_likes.size %></span>
+         <% end %>
+      <% else %>
+     
+      <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
+          <span class="icon"><i class="fa fa-heart" aria-hidden="true"></i></span>
+          <span class="vote_count"><%= shot.get_likes.size %></span>
+
+         <% end %>
+
+      <% end %>
+
+      <% else %>
+
+      <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
+          <span class="icon"><i class="fa fa-heart" aria-hidden="true"></i></span>
+          <span class="vote_count"><%= shot.get_likes.size %></span>
+         <% end %>
+        <% end %>
+      
+
+      </div>
+
+
+                  <td></td
+
+                </div>
+              </div>
+            </div>
+
+        <div class="user-data">
+          <div class="user-thumb">
+            <%= gravatar_image_tag(shot.user.email.gsub('spam', 'mdeering'), alt: shot.user.name, gravatar: { size: 20 }) %>
+          </div>
+           <div class="user-name"><%= shot.user.name %></div>
+        </div>
+        </div>
+        </div>
+            <% end %>
+            
+
+            
+          
+        
+      </div>
+      </div>
+       </div>
+    </main>
+
+
+
