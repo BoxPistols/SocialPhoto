@@ -67,6 +67,7 @@ end
 # Reload
 group :development do
   gem 'guard-livereload', '~> 2.5', require: false
+  # gem 'pry-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

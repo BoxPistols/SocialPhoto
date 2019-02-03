@@ -10,7 +10,14 @@
       <div class="album py-5 bg-light">
         <div class="container">
 
-          <div class="row">
+          <% if current_user %>
+            <%= link_to new_shot_path, class: 'mb-4 btn btn-primary rose' do %>
+              <span class="icon is-small"><i class="fa fa-upload"></i></span>
+              <span>New Shot</span>
+            <% end %>
+          <% end %>
+
+        <div class="row">
             <% @shots.each do |shot| %>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
