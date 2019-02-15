@@ -51,4 +51,6 @@ build-iPhoneSimulator/
 
 .idea/
 
-/log/
+log/
+log/development.log
+
