@@ -5980,3 +5980,1717 @@ Processing by ShotsController#index as HTML
 Completed 200 OK in 766ms (Views: 652.1ms | ActiveRecord: 108.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-17 02:42:21 +0900
+  [1m[35m (8.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (121.1ms)
+  [1m[36mShot Load (10.1ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (35.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (24.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (21.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (23.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (18.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (612.2ms)
+  Rendered shared/_header.html.erb (2.7ms)
+Completed 200 OK in 1709ms (Views: 1341.1ms | ActiveRecord: 296.3ms)
+
+
+Started GET "/shots/new" for 127.0.0.1 at 2019-02-17 02:42:46 +0900
+Processing by ShotsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:18
+  Rendering shots/new.html.erb within layouts/application
+  Rendered shots/_form.html.erb (115.0ms)
+  Rendered shots/new.html.erb within layouts/application (119.9ms)
+  Rendered shared/_header.html.erb (1.9ms)
+Completed 200 OK in 293ms (Views: 278.8ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/shots/4/like" for 127.0.0.1 at 2019-02-17 02:43:01 +0900
+Processing by ShotsController#like as HTML
+  Parameters: {"authenticity_token"=>"IoBnVDzL8paln7gEoqp2XLtKxrtp2JQq9ROXUuX3wpPKgNzFcH2cpj2s05m9x6MBJ89hs0mkVlGXLD7c+KioCw==", "id"=>"4"}
+  [1m[36mShot Load (1.6ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (25.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = $4[0m  [["votable_id", 4], ["votable_type", "Shot"], ["voter_id", 1], ["voter_type", "User"]]
+  ↳ app/controllers/shots_controller.rb:66
+  [1m[35m (5.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shots_controller.rb:66
+  [1m[36mActsAsVotable::Vote Create (49.7ms)[0m  [1m[32mINSERT INTO "votes" ("votable_type", "votable_id", "voter_type", "voter_id", "vote_flag", "vote_weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["votable_type", "Shot"], ["votable_id", 4], ["voter_type", "User"], ["voter_id", 1], ["vote_flag", true], ["vote_weight", 1], ["created_at", "2019-02-16 17:43:02.070705"], ["updated_at", "2019-02-16 17:43:02.070705"]]
+  ↳ app/controllers/shots_controller.rb:66
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shots_controller.rb:66
+Redirected to http://localhost:3000/
+Completed 302 Found in 210ms (ActiveRecord: 93.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 02:43:02 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (11.9ms)
+  [1m[36mShot Load (1.7ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (26.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (23.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (27.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (183.5ms)
+  Rendered shared/_header.html.erb (2.8ms)
+Completed 200 OK in 366ms (Views: 260.9ms | ActiveRecord: 101.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-02-17 03:43:51 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gMYodg/ZYLaYsWZxdHHrudrEemsy4ADa7YJ6jNZHsxBoxpPnQ28OhgCCDexrHD7kRkHdYxKcwqGPvdMCyxjZiA=="}
+  [1m[36mUser Load (23.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (22.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 74ms (ActiveRecord: 46.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:43:51 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  Rendered shots/_hero.html.erb (5.9ms)
+  [1m[36mShot Load (3.5ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (31.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:77
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:77
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (24.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:77
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (27.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:77
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (175.9ms)
+  Rendered shared/_header.html.erb (1.4ms)
+Completed 200 OK in 413ms (Views: 301.3ms | ActiveRecord: 100.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-02-17 03:43:57 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (77.0ms)
+  Rendered shared/_header.html.erb (2.6ms)
+Completed 200 OK in 239ms (Views: 226.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-02-17 03:44:00 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iF8C42k8J+BCpJm7PoowJtew4wsaozcOTYo+TuF6CIjykKsc5x9Azg4+jVujc54J7XFBvPlm3DveIILtkOyPSw==", "user"=>{"name"=>"ait2", "email"=>"dev2@dev.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (35.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dev2@dev.com"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 48ms (ActiveRecord: 35.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iF8C42k8J+BCpJm7PoowJtew4wsaozcOTYo+TuF6CIjykKsc5x9Azg4+jVujc54J7XFBvPlm3DveIILtkOyPSw==", "user"=>{"name"=>"ait2", "email"=>"dev2@dev.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Unpermitted parameter: :name
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (47.0ms)
+  Rendered shared/_header.html.erb (3.0ms)
+Completed 200 OK in 413ms (Views: 174.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-02-17 03:44:11 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PLT5IA0M0tKE/gmFtib0nP/G/5uT+9dwB7PbRA9YFpfBXiBmduDZr9VwpGpCL8yt2MIImDPhsqt7G2J6BgP9MA==", "user"=>{"name"=>"ait", "email"=>"dev@dev.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (23.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dev@dev.com"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (5.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (12.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2019-02-16 18:44:11.424322"], ["last_sign_in_at", "2019-02-03 17:28:27.106320"], ["sign_in_count", 6], ["updated_at", "2019-02-16 18:44:11.430579"], ["id", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (31.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 305ms (ActiveRecord: 72.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:44:11 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (3.4ms)
+  [1m[36mShot Load (0.6ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (21.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (24.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (31.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (168.7ms)
+  Rendered shared/_header.html.erb (6.7ms)
+Completed 200 OK in 330ms (Views: 230.0ms | ActiveRecord: 94.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-02-17 03:44:15 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"C9elWPVZ+vKvCIBmrafcbNHyd18a6Dw9Ya60qsZSiEe5DNmLpQlI76hiBAsYQydq5Mt5pcFYDvnsZn9CWZIGLA=="}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:44:15 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  Rendered shots/_hero.html.erb (2.4ms)
+  [1m[36mShot Load (16.9ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:77
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (24.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:77
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (25.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:77
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:77
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (150.9ms)
+  Rendered shared/_header.html.erb (1.7ms)
+Completed 200 OK in 274ms (Views: 192.8ms | ActiveRecord: 76.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-02-17 03:44:18 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (37.3ms)
+  Rendered shared/_header.html.erb (1.7ms)
+Completed 200 OK in 190ms (Views: 187.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-17 03:44:24 +0900
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Isdk5zNA5ehoX4AglGVuSYQv4B0k07aBe8/+vLn4kAxNkGwPik9Ui0N14prsqpTkslywWjGLxo/fdpF0hmODUw==", "user"=>{"name"=>"ait2", "email"=>"dev2@dev.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (9.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dev2@dev.com"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (3.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "dev2@dev.com"], ["encrypted_password", "$2a$11$sOblNkdAsSehHCDJyPEqrOFqTqBp1gzryHrk/6PmxyCpZV7fGOXxO"], ["created_at", "2019-02-16 18:44:25.032540"], ["updated_at", "2019-02-16 18:44:25.032540"], ["name", "ait2"]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (2.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2019-02-16 18:44:25.039261"], ["last_sign_in_at", "2019-02-16 18:44:25.039261"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2019-02-16 18:44:25.040393"], ["id", 2]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 246ms (ActiveRecord: 19.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:44:25 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (11.7ms)
+  [1m[36mShot Load (0.6ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (25.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (24.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (23.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (180.6ms)
+  Rendered shared/_header.html.erb (1.3ms)
+Completed 200 OK in 290ms (Views: 195.9ms | ActiveRecord: 90.6ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2019-02-17 03:44:29 +0900
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (30.3ms)
+  Rendered shared/_header.html.erb (1.5ms)
+Completed 200 OK in 157ms (Views: 151.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:44:35 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (19.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (23.3ms)
+  [1m[36mShot Load (0.8ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (22.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (33.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (23.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (28.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (236.9ms)
+  Rendered shared/_header.html.erb (2.3ms)
+Completed 200 OK in 395ms (Views: 245.9ms | ActiveRecord: 144.0ms)
+
+
+Started GET "/shots/new" for 127.0.0.1 at 2019-02-17 03:44:42 +0900
+Processing by ShotsController#new as HTML
+  [1m[36mUser Load (73.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:18
+  Rendering shots/new.html.erb within layouts/application
+  Rendered shots/_form.html.erb (25.7ms)
+  Rendered shots/new.html.erb within layouts/application (31.6ms)
+  Rendered shared/_header.html.erb (1.2ms)
+Completed 200 OK in 239ms (Views: 157.9ms | ActiveRecord: 73.9ms)
+
+
+Started POST "/shots" for 127.0.0.1 at 2019-02-17 03:46:57 +0900
+Processing by ShotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gFBEJ5I8b2XIEps69gZXJMi8L7DrD6kYES8LeYFGeYz/QnyFH8BfCQxwtWcwge8L/0W0U+VwRt/9/4ne+ZF3Mw==", "shot"=>{"user_shot"=>#<ActionDispatch::Http::UploadedFile:0x00007fa827c123d0 @tempfile=#<Tempfile:/var/folders/fd/9vq0t2h14d7_jtxw_s_0qmz80000gn/T/RackMultipart20190217-27790-1csn6ig.png>, @original_filename="nensha.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"shot[user_shot]\"; filename=\"nensha.png\"\r\nContent-Type: image/png\r\n">, "title"=>"万里の長城（念写）", "description"=>""}, "commit"=>"Create Shot"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:28
+  [1m[35m (8.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shots_controller.rb:31
+  [1m[36mShot Create (2.8ms)[0m  [1m[32mINSERT INTO "shots" ("title", "description", "user_id", "user_shot", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "万里の長城（念写）"], ["description", ""], ["user_id", 2], ["user_shot", "nensha.png"], ["created_at", "2019-02-16 18:46:57.935258"], ["updated_at", "2019-02-16 18:46:57.935258"]]
+  ↳ app/controllers/shots_controller.rb:31
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shots_controller.rb:31
+Redirected to http://localhost:3000/shots/5
+Completed 302 Found in 924ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/shots/5" for 127.0.0.1 at 2019-02-17 03:46:57 +0900
+Processing by ShotsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mShot Load (0.9ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Exists (6.2ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_type" = $1 AND "impressions"."impressionable_id" = $2 AND "impressions"."session_hash" = $3 LIMIT $4[0m  [["impressionable_type", "Shot"], ["impressionable_id", 5], ["session_hash", "693c587de2672fee549c560674e6b3cf"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Create (3.7ms)[0m  [1m[32mINSERT INTO "impressions" ("impressionable_type", "impressionable_id", "user_id", "controller_name", "action_name", "request_hash", "ip_address", "session_hash", "referrer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["impressionable_type", "Shot"], ["impressionable_id", 5], ["user_id", 2], ["controller_name", "shots"], ["action_name", "show"], ["request_hash", "ec7ac14211f865b7f40fa91062e277c598292affc98b70b69a28ce2822c13bbd"], ["ip_address", "127.0.0.1"], ["session_hash", "693c587de2672fee549c560674e6b3cf"], ["referrer", "http://localhost:3000/shots/new"], ["created_at", "2019-02-16 18:46:58.102635"], ["updated_at", "2019-02-16 18:46:58.102635"]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (24.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering shots/show.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/show.html.erb:30
+  [1m[35m (26.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:36
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:40
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:49
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/show.html.erb:80
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:109
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:112
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (61.5ms)
+  Rendered shots/show.html.erb within layouts/application (121.4ms)
+  Rendered shared/_header.html.erb (15.9ms)
+Completed 200 OK in 417ms (Views: 210.1ms | ActiveRecord: 171.3ms)
+
+
+Started POST "/shots/5/comments" for 127.0.0.1 at 2019-02-17 03:47:05 +0900
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0EhC4cgStuE9Y1LKgwyOJZERfV7YDs8P3FNux4uKuko6kAcrmWTBC/0rVwErw/1KkiJfFIYYvfvPljsbKeO41Q==", "comment"=>{"name"=>"", "response"=>""}, "commit"=>"Leave a reply", "shot_id"=>"5"}
+  [1m[36mUser Load (12.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mShot Load (0.6ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[36mComment Create (2.5ms)[0m  [1m[32mINSERT INTO "comments" ("name", "response", "created_at", "updated_at", "shot_id", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", ""], ["response", ""], ["created_at", "2019-02-16 18:47:06.088713"], ["updated_at", "2019-02-16 18:47:06.088713"], ["shot_id", 5], ["user_id", 2]]
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:8
+Redirected to http://localhost:3000/shots/5
+Completed 302 Found in 78ms (ActiveRecord: 19.7ms)
+
+
+Started GET "/shots/5" for 127.0.0.1 at 2019-02-17 03:47:06 +0900
+Processing by ShotsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mShot Load (0.4ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_type" = $1 AND "impressions"."impressionable_id" = $2 AND "impressions"."session_hash" = $3 LIMIT $4[0m  [["impressionable_type", "Shot"], ["impressionable_id", 5], ["session_hash", "693c587de2672fee549c560674e6b3cf"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering shots/show.html.erb within layouts/application
+  [1m[35m (13.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/show.html.erb:30
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:40
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:49
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/show.html.erb:80
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:109
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:112
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  Rendered collection of comments/_comment.html.erb [1 times] (3.2ms)
+  Rendered comments/_form.html.erb (24.2ms)
+  Rendered shots/show.html.erb within layouts/application (71.8ms)
+  Rendered shared/_header.html.erb (1.4ms)
+Completed 200 OK in 226ms (Views: 197.7ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:47:09 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (3.4ms)
+  [1m[36mShot Load (25.2ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (23.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (24.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (140.7ms)
+  Rendered shared/_header.html.erb (1.0ms)
+Completed 200 OK in 235ms (Views: 147.4ms | ActiveRecord: 84.7ms)
+
+
+Started PUT "/shots/5/like" for 127.0.0.1 at 2019-02-17 03:47:13 +0900
+Processing by ShotsController#like as HTML
+  Parameters: {"authenticity_token"=>"p3snnm781vhDmw8W/EEVqNzX8XiPX3VaqeNSbXVo7jlNo2JUP4qhEoPTCt1UjmbH3+TTMtFJB666Jgex1wHspg==", "id"=>"5"}
+  [1m[36mShot Load (22.3ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = $4[0m  [["votable_id", 5], ["votable_type", "Shot"], ["voter_id", 2], ["voter_type", "User"]]
+  ↳ app/controllers/shots_controller.rb:66
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shots_controller.rb:66
+  [1m[36mActsAsVotable::Vote Create (0.6ms)[0m  [1m[32mINSERT INTO "votes" ("votable_type", "votable_id", "voter_type", "voter_id", "vote_flag", "vote_weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["votable_type", "Shot"], ["votable_id", 5], ["voter_type", "User"], ["voter_id", 2], ["vote_flag", true], ["vote_weight", 1], ["created_at", "2019-02-16 18:47:13.441420"], ["updated_at", "2019-02-16 18:47:13.441420"]]
+  ↳ app/controllers/shots_controller.rb:66
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shots_controller.rb:66
+Redirected to http://localhost:3000/
+Completed 302 Found in 37ms (ActiveRecord: 24.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:47:13 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (18.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (23.0ms)
+  [1m[36mShot Load (0.5ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mUser Load (27.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (26.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (26.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (22.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (230.4ms)
+  Rendered shared/_header.html.erb (2.4ms)
+Completed 200 OK in 415ms (Views: 272.6ms | ActiveRecord: 138.1ms)
+
+
+Started GET "/shots/5" for 127.0.0.1 at 2019-02-17 03:47:21 +0900
+Processing by ShotsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mShot Load (0.4ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_type" = $1 AND "impressions"."impressionable_id" = $2 AND "impressions"."session_hash" = $3 LIMIT $4[0m  [["impressionable_type", "Shot"], ["impressionable_id", 5], ["session_hash", "693c587de2672fee549c560674e6b3cf"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering shots/show.html.erb within layouts/application
+  [1m[35m (16.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/show.html.erb:30
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:36
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:40
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/show.html.erb:80
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:109
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:112
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  Rendered collection of comments/_comment.html.erb [1 times] (3.5ms)
+  Rendered comments/_form.html.erb (15.5ms)
+  Rendered shots/show.html.erb within layouts/application (63.3ms)
+  Rendered shared/_header.html.erb (0.9ms)
+Completed 200 OK in 198ms (Views: 168.7ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2019-02-17 03:47:30 +0900
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (33.0ms)
+  Rendered shared/_header.html.erb (2.3ms)
+Completed 200 OK in 191ms (Views: 188.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/shots/5" for 127.0.0.1 at 2019-02-17 03:47:40 +0900
+Processing by ShotsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mShot Load (0.4ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_type" = $1 AND "impressions"."impressionable_id" = $2 AND "impressions"."session_hash" = $3 LIMIT $4[0m  [["impressionable_type", "Shot"], ["impressionable_id", 5], ["session_hash", "693c587de2672fee549c560674e6b3cf"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering shots/show.html.erb within layouts/application
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/show.html.erb:30
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:36
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:40
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/show.html.erb:80
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:109
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:112
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  Rendered collection of comments/_comment.html.erb [1 times] (3.0ms)
+  Rendered comments/_form.html.erb (15.4ms)
+  Rendered shots/show.html.erb within layouts/application (47.0ms)
+  Rendered shared/_header.html.erb (2.4ms)
+Completed 200 OK in 158ms (Views: 137.4ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-02-17 03:47:51 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+
+Started GET "/users/1" for 127.0.0.1 at 2019-02-17 03:48:04 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/users/1"):
+  
+
+Started GET "/shots/new" for 127.0.0.1 at 2019-02-17 03:48:20 +0900
+Processing by ShotsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:18
+  Rendering shots/new.html.erb within layouts/application
+  Rendered shots/_form.html.erb (24.2ms)
+  Rendered shots/new.html.erb within layouts/application (29.4ms)
+  Rendered shared/_header.html.erb (1.1ms)
+Completed 200 OK in 142ms (Views: 134.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/shots" for 127.0.0.1 at 2019-02-17 03:48:35 +0900
+Processing by ShotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N51guYp8ZacLdiSDbW1CVR/eU5y1QLRuMwjfXMMeFpVIj1gbB4BVy88UCt6r6vp6KCfIf7s/W6nf2F37u8kYKg==", "shot"=>{"user_shot"=>#<ActionDispatch::Http::UploadedFile:0x00007fa8271d6ee8 @tempfile=#<Tempfile:/var/folders/fd/9vq0t2h14d7_jtxw_s_0qmz80000gn/T/RackMultipart20190217-27790-1si4log.png>, @original_filename="nensha.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"shot[user_shot]\"; filename=\"nensha.png\"\r\nContent-Type: image/png\r\n">, "title"=>"エッフェル塔", "description"=>""}, "commit"=>"Create Shot"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:28
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shots_controller.rb:31
+  [1m[36mShot Create (2.4ms)[0m  [1m[32mINSERT INTO "shots" ("title", "description", "user_id", "user_shot", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "エッフェル塔"], ["description", ""], ["user_id", 2], ["user_shot", "nensha.png"], ["created_at", "2019-02-16 18:48:36.255929"], ["updated_at", "2019-02-16 18:48:36.255929"]]
+  ↳ app/controllers/shots_controller.rb:31
+  [1m[35m (58.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shots_controller.rb:31
+Redirected to http://localhost:3000/shots/6
+Completed 302 Found in 1140ms (ActiveRecord: 62.0ms)
+
+
+Started GET "/shots/6" for 127.0.0.1 at 2019-02-17 03:48:36 +0900
+Processing by ShotsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mShot Load (1.2ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Exists (28.2ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_type" = $1 AND "impressions"."impressionable_id" = $2 AND "impressions"."session_hash" = $3 LIMIT $4[0m  [["impressionable_type", "Shot"], ["impressionable_id", 6], ["session_hash", "693c587de2672fee549c560674e6b3cf"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Create (5.2ms)[0m  [1m[32mINSERT INTO "impressions" ("impressionable_type", "impressionable_id", "user_id", "controller_name", "action_name", "request_hash", "ip_address", "session_hash", "referrer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["impressionable_type", "Shot"], ["impressionable_id", 6], ["user_id", 2], ["controller_name", "shots"], ["action_name", "show"], ["request_hash", "7b9f864c70fa198953e63aab1fab619b8cf684ec2d04decd0d545288ed89a380"], ["ip_address", "127.0.0.1"], ["session_hash", "693c587de2672fee549c560674e6b3cf"], ["referrer", "http://localhost:3000/shots/new"], ["created_at", "2019-02-16 18:48:36.446423"], ["updated_at", "2019-02-16 18:48:36.446423"]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering shots/show.html.erb within layouts/application
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 6], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/show.html.erb:30
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 6]]
+  ↳ app/views/shots/show.html.erb:36
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:40
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:49
+  [1m[36mUser Load (27.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/show.html.erb:80
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 6]]
+  ↳ app/views/shots/show.html.erb:109
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 6]]
+  ↳ app/views/shots/show.html.erb:112
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (26.3ms)
+  Rendered shots/show.html.erb within layouts/application (96.2ms)
+  Rendered shared/_header.html.erb (1.1ms)
+Completed 200 OK in 354ms (Views: 255.6ms | ActiveRecord: 71.3ms)
+
+
+Started GET "/shots/new" for 127.0.0.1 at 2019-02-17 03:48:40 +0900
+Processing by ShotsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:18
+  Rendering shots/new.html.erb within layouts/application
+  Rendered shots/_form.html.erb (33.8ms)
+  Rendered shots/new.html.erb within layouts/application (40.6ms)
+  Rendered shared/_header.html.erb (0.9ms)
+Completed 200 OK in 187ms (Views: 177.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/shots" for 127.0.0.1 at 2019-02-17 03:48:53 +0900
+Processing by ShotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xYlGK+bYW8OYJO7cWyG+kc2U8YsO1aqT3Rsrp/sNF2+6m36JayRrr1xGwIGdpga++m1qaACqRVQxy6kAg9oZ0A==", "shot"=>{"user_shot"=>#<ActionDispatch::Http::UploadedFile:0x00007fa825f502b0 @tempfile=#<Tempfile:/var/folders/fd/9vq0t2h14d7_jtxw_s_0qmz80000gn/T/RackMultipart20190217-27790-1ym6hrj.png>, @original_filename="nensha.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"shot[user_shot]\"; filename=\"nensha.png\"\r\nContent-Type: image/png\r\n">, "title"=>"金星", "description"=>""}, "commit"=>"Create Shot"}
+  [1m[36mUser Load (24.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:28
+  [1m[35m (16.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shots_controller.rb:31
+  [1m[36mShot Create (0.5ms)[0m  [1m[32mINSERT INTO "shots" ("title", "description", "user_id", "user_shot", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "金星"], ["description", ""], ["user_id", 2], ["user_shot", "nensha.png"], ["created_at", "2019-02-16 18:48:54.238563"], ["updated_at", "2019-02-16 18:48:54.238563"]]
+  ↳ app/controllers/shots_controller.rb:31
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shots_controller.rb:31
+Redirected to http://localhost:3000/shots/7
+Completed 302 Found in 901ms (ActiveRecord: 46.2ms)
+
+
+Started GET "/shots/7" for 127.0.0.1 at 2019-02-17 03:48:54 +0900
+Processing by ShotsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mShot Load (1.3ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_type" = $1 AND "impressions"."impressionable_id" = $2 AND "impressions"."session_hash" = $3 LIMIT $4[0m  [["impressionable_type", "Shot"], ["impressionable_id", 7], ["session_hash", "693c587de2672fee549c560674e6b3cf"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Create (0.5ms)[0m  [1m[32mINSERT INTO "impressions" ("impressionable_type", "impressionable_id", "user_id", "controller_name", "action_name", "request_hash", "ip_address", "session_hash", "referrer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["impressionable_type", "Shot"], ["impressionable_id", 7], ["user_id", 2], ["controller_name", "shots"], ["action_name", "show"], ["request_hash", "cdb3875c7ed30bb4613e76e833c161169c1f9b1a1fab746b33e3d4563d543a7f"], ["ip_address", "127.0.0.1"], ["session_hash", "693c587de2672fee549c560674e6b3cf"], ["referrer", "http://localhost:3000/shots/new"], ["created_at", "2019-02-16 18:48:54.305327"], ["updated_at", "2019-02-16 18:48:54.305327"]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering shots/show.html.erb within layouts/application
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 7], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/show.html.erb:30
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 7]]
+  ↳ app/views/shots/show.html.erb:36
+  [1m[35m (21.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:40
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:49
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/show.html.erb:80
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 7]]
+  ↳ app/views/shots/show.html.erb:109
+  [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 7]]
+  ↳ app/views/shots/show.html.erb:112
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (29.3ms)
+  Rendered shots/show.html.erb within layouts/application (93.0ms)
+  Rendered shared/_header.html.erb (1.0ms)
+Completed 200 OK in 288ms (Views: 224.2ms | ActiveRecord: 35.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:48:56 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (36.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (42.1ms)
+  [1m[36mShot Load (0.4ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 7], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 7]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 6], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 6]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (23.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (25.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (24.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (222.2ms)
+  Rendered shared/_header.html.erb (1.1ms)
+Completed 200 OK in 338ms (Views: 207.0ms | ActiveRecord: 125.6ms)
+
+
+Started GET "/shots/5" for 127.0.0.1 at 2019-02-17 03:49:02 +0900
+Processing by ShotsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mShot Load (0.6ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (26.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_type" = $1 AND "impressions"."impressionable_id" = $2 AND "impressions"."session_hash" = $3 LIMIT $4[0m  [["impressionable_type", "Shot"], ["impressionable_id", 5], ["session_hash", "693c587de2672fee549c560674e6b3cf"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering shots/show.html.erb within layouts/application
+  [1m[35m (24.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/show.html.erb:30
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:36
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:40
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/show.html.erb:80
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:109
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:112
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  Rendered collection of comments/_comment.html.erb [1 times] (3.3ms)
+  Rendered comments/_form.html.erb (13.6ms)
+  Rendered shots/show.html.erb within layouts/application (69.8ms)
+  Rendered shared/_header.html.erb (1.1ms)
+Completed 200 OK in 230ms (Views: 164.5ms | ActiveRecord: 55.9ms)
+
+
+Started GET "/shots/5/edit" for 127.0.0.1 at 2019-02-17 03:49:04 +0900
+Processing by ShotsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mShot Load (0.4ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering shots/edit.html.erb within layouts/application
+  Rendered shots/_form.html.erb (30.1ms)
+  Rendered shots/edit.html.erb within layouts/application (33.8ms)
+  Rendered shared/_header.html.erb (1.1ms)
+Completed 200 OK in 165ms (Views: 153.7ms | ActiveRecord: 2.2ms)
+
+
+Started PATCH "/shots/5" for 127.0.0.1 at 2019-02-17 03:49:09 +0900
+Processing by ShotsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q9yD+6f02qWnpNrnDxSFdRy6laA2ezmrf9HWijShiYl9FyE6v4/VSam/CwZfO3UZVM5efPuqZY6j+Qd3CnXwTg==", "shot"=>{"title"=>"万里の長城", "description"=>""}, "commit"=>"Update Shot", "id"=>"5"}
+  [1m[36mShot Load (0.4ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (24.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shots_controller.rb:45
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:45
+  [1m[36mShot Update (0.6ms)[0m  [1m[33mUPDATE "shots" SET "title" = $1, "updated_at" = $2 WHERE "shots"."id" = $3[0m  [["title", "万里の長城"], ["updated_at", "2019-02-16 18:49:09.298298"], ["id", 5]]
+  ↳ app/controllers/shots_controller.rb:45
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shots_controller.rb:45
+Redirected to http://localhost:3000/shots/5
+Completed 302 Found in 54ms (ActiveRecord: 29.7ms)
+
+
+Started GET "/shots/5" for 127.0.0.1 at 2019-02-17 03:49:09 +0900
+Processing by ShotsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mShot Load (0.4ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Exists (6.4ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_type" = $1 AND "impressions"."impressionable_id" = $2 AND "impressions"."session_hash" = $3 LIMIT $4[0m  [["impressionable_type", "Shot"], ["impressionable_id", 5], ["session_hash", "693c587de2672fee549c560674e6b3cf"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering shots/show.html.erb within layouts/application
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/show.html.erb:30
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:36
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:40
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:43
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/show.html.erb:80
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:109
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/show.html.erb:112
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  Rendered collection of comments/_comment.html.erb [1 times] (2.3ms)
+  Rendered comments/_form.html.erb (14.1ms)
+  Rendered shots/show.html.erb within layouts/application (47.0ms)
+  Rendered shared/_header.html.erb (1.6ms)
+Completed 200 OK in 217ms (Views: 182.0ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:49:12 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (9.5ms)
+  [1m[36mShot Load (0.4ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 7], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 7]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 6], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (24.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 6]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (24.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (25.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (183.6ms)
+  Rendered shared/_header.html.erb (1.2ms)
+Completed 200 OK in 338ms (Views: 212.9ms | ActiveRecord: 96.2ms)
+
+
+Started GET "/shots/new" for 127.0.0.1 at 2019-02-17 03:49:27 +0900
+Processing by ShotsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:18
+  Rendering shots/new.html.erb within layouts/application
+  Rendered shots/_form.html.erb (39.1ms)
+  Rendered shots/new.html.erb within layouts/application (43.3ms)
+  Rendered shared/_header.html.erb (1.1ms)
+Completed 200 OK in 176ms (Views: 168.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/shots" for 127.0.0.1 at 2019-02-17 03:49:59 +0900
+Processing by ShotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IEhcPXwkStGZot6PAm8Hp8b72lrtTjTuwAqGP+c6qulfWmSf8dh6vV3A8NLE6L+I8QJBueMx2yks2gSYn+2kVg==", "shot"=>{"user_shot"=>#<ActionDispatch::Http::UploadedFile:0x00007fa82724a690 @tempfile=#<Tempfile:/var/folders/fd/9vq0t2h14d7_jtxw_s_0qmz80000gn/T/RackMultipart20190217-27790-k1ynx1.png>, @original_filename="nensha.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"shot[user_shot]\"; filename=\"nensha.png\"\r\nContent-Type: image/png\r\n">, "title"=>"瀬戸大橋", "description"=>""}, "commit"=>"Create Shot"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:28
+  [1m[35m (10.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shots_controller.rb:31
+  [1m[36mShot Create (0.5ms)[0m  [1m[32mINSERT INTO "shots" ("title", "description", "user_id", "user_shot", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "瀬戸大橋"], ["description", ""], ["user_id", 2], ["user_shot", "nensha.png"], ["created_at", "2019-02-16 18:49:59.943382"], ["updated_at", "2019-02-16 18:49:59.943382"]]
+  ↳ app/controllers/shots_controller.rb:31
+  [1m[35m (29.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shots_controller.rb:31
+Redirected to http://localhost:3000/shots/8
+Completed 302 Found in 900ms (ActiveRecord: 41.2ms)
+
+
+Started GET "/shots/8" for 127.0.0.1 at 2019-02-17 03:50:00 +0900
+Processing by ShotsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mShot Load (0.7ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_type" = $1 AND "impressions"."impressionable_id" = $2 AND "impressions"."session_hash" = $3 LIMIT $4[0m  [["impressionable_type", "Shot"], ["impressionable_id", 8], ["session_hash", "693c587de2672fee549c560674e6b3cf"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (27.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Create (1.7ms)[0m  [1m[32mINSERT INTO "impressions" ("impressionable_type", "impressionable_id", "user_id", "controller_name", "action_name", "request_hash", "ip_address", "session_hash", "referrer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["impressionable_type", "Shot"], ["impressionable_id", 8], ["user_id", 2], ["controller_name", "shots"], ["action_name", "show"], ["request_hash", "4d2117e82021e7f000f1a75e5129e55699746f10d798531f10a840b017fe953d"], ["ip_address", "127.0.0.1"], ["session_hash", "693c587de2672fee549c560674e6b3cf"], ["referrer", "http://localhost:3000/shots/new"], ["created_at", "2019-02-16 18:50:00.094034"], ["updated_at", "2019-02-16 18:50:00.094034"]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering shots/show.html.erb within layouts/application
+  [1m[35m (12.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 8], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/show.html.erb:30
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 8]]
+  ↳ app/views/shots/show.html.erb:36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 8], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:40
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 8], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:49
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/show.html.erb:80
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 8]]
+  ↳ app/views/shots/show.html.erb:109
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 8]]
+  ↳ app/views/shots/show.html.erb:112
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (29.4ms)
+  Rendered shots/show.html.erb within layouts/application (69.6ms)
+  Rendered shared/_header.html.erb (1.6ms)
+Completed 200 OK in 282ms (Views: 206.9ms | ActiveRecord: 50.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:50:03 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (19.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (23.0ms)
+  [1m[36mShot Load (0.4ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 8], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 8]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 8], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 8], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (24.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 7], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 7]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 6], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 6]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (22.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (25.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (24.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (233.7ms)
+  Rendered shared/_header.html.erb (0.9ms)
+Completed 200 OK in 336ms (Views: 196.9ms | ActiveRecord: 135.6ms)
+
+
+Started PUT "/shots/8/like" for 127.0.0.1 at 2019-02-17 03:50:16 +0900
+Processing by ShotsController#like as HTML
+  Parameters: {"authenticity_token"=>"Y5IlX6yiSR38fa+kxYnQBXk0AAFdbuNghjC5R3pUk+2JSmCV/dQ+9zw1qm9tRqNqegciSwN4kZSV9eyb2D2Rcg==", "id"=>"8"}
+  [1m[36mShot Load (42.4ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."voter_id" = $3 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = $4[0m  [["votable_id", 8], ["votable_type", "Shot"], ["voter_id", 2], ["voter_type", "User"]]
+  ↳ app/controllers/shots_controller.rb:66
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shots_controller.rb:66
+  [1m[36mActsAsVotable::Vote Create (0.7ms)[0m  [1m[32mINSERT INTO "votes" ("votable_type", "votable_id", "voter_type", "voter_id", "vote_flag", "vote_weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["votable_type", "Shot"], ["votable_id", 8], ["voter_type", "User"], ["voter_id", 2], ["vote_flag", true], ["vote_weight", 1], ["created_at", "2019-02-16 18:50:16.102380"], ["updated_at", "2019-02-16 18:50:16.102380"]]
+  ↳ app/controllers/shots_controller.rb:66
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shots_controller.rb:66
+Redirected to http://localhost:3000/
+Completed 302 Found in 63ms (ActiveRecord: 45.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:50:16 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (2.4ms)
+  [1m[36mShot Load (23.9ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 8], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 8]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 8], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 8], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 7], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 7]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (24.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 6], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 6]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (25.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (24.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (25.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (243.3ms)
+  Rendered shared/_header.html.erb (1.4ms)
+Completed 200 OK in 420ms (Views: 271.8ms | ActiveRecord: 144.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:53:16 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  Rendered shots/_hero.html.erb (1.6ms)
+  Rendered shots/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~:
+  app/views/shots/_hero.html.erb:18:in `'
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:53:46 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  Rendered shots/_hero.html.erb (1.4ms)
+  Rendered shots/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~:
+  app/views/shots/_hero.html.erb:18:in `'
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:54:43 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (19.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (22.1ms)
+  [1m[36mShot Load (0.8ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 8], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 8]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 8], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 8], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (21.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 7], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 7]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 6], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 6]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (24.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (23.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (25.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (247.9ms)
+  Rendered shared/_header.html.erb (1.9ms)
+Completed 200 OK in 410ms (Views: 266.3ms | ActiveRecord: 138.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-17 03:55:09 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (16.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (19.9ms)
+  [1m[36mShot Load (0.6ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 8], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 8]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 8], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 8], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 7], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (23.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 7]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 7], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 6], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (25.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 6]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 6], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (23.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 5]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 5], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:61
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 4]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (125.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 4], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 3]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 3], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (25.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 2]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 2], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  [1m[35m (19.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (451.1ms)
+  Rendered shared/_header.html.erb (1.2ms)
+Completed 200 OK in 691ms (Views: 406.9ms | ActiveRecord: 278.0ms)
+
+
