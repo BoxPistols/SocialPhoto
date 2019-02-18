@@ -7694,3 +7694,367 @@ Processing by ShotsController#index as HTML
 Completed 200 OK in 691ms (Views: 406.9ms | ActiveRecord: 278.0ms)
 
 
+  [1m[35m (407.6ms)[0m  [1m[35mCREATE DATABASE "dribbleclone_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (319.0ms)[0m  [1m[35mCREATE DATABASE "dribbleclone_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7936889092073525220)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to DeviseCreateUsers (20180517164409)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180517164409_devise_create_users.rb:5
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20180517164409_devise_create_users.rb:39
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20180517164409_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (4.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180517164409"]]
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddFieldsToUsers (20180517175315)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "users" ADD "name" character varying[0m
+  ↳ db/migrate/20180517175315_add_fields_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (6.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180517175315"]]
+  ↳ bin/rails:4
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateShots (20180517190505)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "shots" ("id" bigserial primary key, "title" character varying, "description" text, "user_id" integer, "user_shot" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180517190505_create_shots.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180517190505"]]
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateComments (20180519205308)
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "name" character varying, "response" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180519205308_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180519205308"]]
+  ↳ bin/rails:4
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddShotIdToComments (20180519205537)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "comments" ADD "shot_id" integer[0m
+  ↳ db/migrate/20180519205537_add_shot_id_to_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180519205537"]]
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddUserIdToComments (20180519221334)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "comments" ADD "user_id" integer[0m
+  ↳ db/migrate/20180519221334_add_user_id_to_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180519221334"]]
+  ↳ bin/rails:4
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateImpressionsTable (20180520201918)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "impressions"[0m
+  ↳ db/migrate/20180520201918_create_impressions_table.rb:3
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "impressions" ("id" bigserial primary key, "impressionable_type" character varying, "impressionable_id" integer, "user_id" integer, "controller_name" character varying, "action_name" character varying, "view_name" character varying, "request_hash" character varying, "ip_address" character varying, "session_hash" character varying, "message" text, "referrer" text, "params" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180520201918_create_impressions_table.rb:3
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE  INDEX  "impressionable_type_message_index" ON "impressions"  ("impressionable_type", "message", "impressionable_id")[0m
+  ↳ db/migrate/20180520201918_create_impressions_table.rb:18
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "poly_request_index" ON "impressions"  ("impressionable_type", "impressionable_id", "request_hash")[0m
+  ↳ db/migrate/20180520201918_create_impressions_table.rb:19
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE  INDEX  "poly_ip_index" ON "impressions"  ("impressionable_type", "impressionable_id", "ip_address")[0m
+  ↳ db/migrate/20180520201918_create_impressions_table.rb:20
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "poly_session_index" ON "impressions"  ("impressionable_type", "impressionable_id", "session_hash")[0m
+  ↳ db/migrate/20180520201918_create_impressions_table.rb:21
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE  INDEX  "controlleraction_request_index" ON "impressions"  ("controller_name", "action_name", "request_hash")[0m
+  ↳ db/migrate/20180520201918_create_impressions_table.rb:22
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "controlleraction_ip_index" ON "impressions"  ("controller_name", "action_name", "ip_address")[0m
+  ↳ db/migrate/20180520201918_create_impressions_table.rb:23
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE  INDEX  "controlleraction_session_index" ON "impressions"  ("controller_name", "action_name", "session_hash")[0m
+  ↳ db/migrate/20180520201918_create_impressions_table.rb:24
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "poly_params_request_index" ON "impressions"  ("impressionable_type", "impressionable_id", "params")[0m
+  ↳ db/migrate/20180520201918_create_impressions_table.rb:25
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_impressions_on_user_id" ON "impressions"  ("user_id")[0m
+  ↳ db/migrate/20180520201918_create_impressions_table.rb:26
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180520201918"]]
+  ↳ bin/rails:4
+  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to ActsAsVotableMigration (20180521002551)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE TABLE "votes" ("id" serial NOT NULL PRIMARY KEY, "votable_type" character varying, "votable_id" integer, "voter_type" character varying, "voter_id" integer, "vote_flag" boolean, "vote_scope" character varying, "vote_weight" integer, "created_at" timestamp, "updated_at" timestamp)[0m
+  ↳ db/migrate/20180521002551_acts_as_votable_migration.rb:3
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_voter_id_and_voter_type_and_vote_scope" ON "votes"  ("voter_id", "voter_type", "vote_scope")[0m
+  ↳ db/migrate/20180521002551_acts_as_votable_migration.rb:15
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_votable_id_and_votable_type_and_vote_scope" ON "votes"  ("votable_id", "votable_type", "vote_scope")[0m
+  ↳ db/migrate/20180521002551_acts_as_votable_migration.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180521002551"]]
+  ↳ bin/rails:4
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (4.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-02-18 18:17:02.221884"], ["updated_at", "2019-02-18 18:17:02.221884"]]
+  ↳ bin/rails:4
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(7936889092073525220)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/" for 127.0.0.1 at 2019-02-19 03:17:23 +0900
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (36.3ms)
+  [1m[36mShot Load (2.8ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  Rendered shots/index.html.erb within layouts/application (66.1ms)
+Started GET "/" for 127.0.0.1 at 2019-02-19 03:17:27 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (22.5ms)
+  [1m[36mShot Load (2.3ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  Rendered shots/index.html.erb within layouts/application (40.5ms)
+  Rendered shared/_header.html.erb (1.4ms)
+Completed 200 OK in 11964ms (Views: 11863.6ms | ActiveRecord: 19.0ms)
+
+
+  Rendered shared/_header.html.erb (2.1ms)
+Completed 200 OK in 8497ms (Views: 8473.9ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-02-19 03:17:56 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (422.2ms)
+  Rendered shared/_header.html.erb (2.7ms)
+Completed 200 OK in 793ms (Views: 694.2ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-02-19 03:17:59 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N/NX5H1W8GkuSrXSKCn4O0UQgM4oZ3Nl7V9I5pTeBEMWrPvi8aNEzslfe2LMqwPnZCpbU0sGiikQUFRkHrZzjA==", "user"=>{"name"=>"ait2", "email"=>"dev2@dev.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "dev2@dev.com"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 21ms (ActiveRecord: 13.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N/NX5H1W8GkuSrXSKCn4O0UQgM4oZ3Nl7V9I5pTeBEMWrPvi8aNEzslfe2LMqwPnZCpbU0sGiikQUFRkHrZzjA==", "user"=>{"name"=>"ait2", "email"=>"dev2@dev.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Unpermitted parameter: :name
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (27.1ms)
+  Rendered shared/_header.html.erb (1.4ms)
+Completed 200 OK in 442ms (Views: 182.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-02-19 03:18:02 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (48.6ms)
+  Rendered shared/_header.html.erb (1.0ms)
+Completed 200 OK in 272ms (Views: 270.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-19 03:18:11 +0900
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7B+jM6V0GYwO4NEy/rXCoSjBK+PBxdROBCg/DjHZHjiDSKvbHHuo7yXKs4iGejgMHrJ7pNSdpECgkVDGDkINZw==", "user"=>{"name"=>"ait", "email"=>"dev@dev.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dev@dev.com"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "dev@dev.com"], ["encrypted_password", "$2a$11$5RH0q7zPGZ8c4mK4uCs1x.KSEAxosIYDNKkqZhbk3sDIe7LBNs9Wa"], ["created_at", "2019-02-18 18:18:12.029268"], ["updated_at", "2019-02-18 18:18:12.029268"], ["name", "ait"]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (3.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2019-02-18 18:18:12.033134"], ["last_sign_in_at", "2019-02-18 18:18:12.033134"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2019-02-18 18:18:12.034040"], ["id", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 250ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-19 03:18:12 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (7.1ms)
+  [1m[36mShot Load (0.9ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  Rendered shots/index.html.erb within layouts/application (20.7ms)
+  Rendered shared/_header.html.erb (1.7ms)
+Completed 200 OK in 220ms (Views: 205.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/shots/new" for 127.0.0.1 at 2019-02-19 03:18:13 +0900
+Processing by ShotsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:18
+  Rendering shots/new.html.erb within layouts/application
+  Rendered shots/_form.html.erb (48.9ms)
+  Rendered shots/new.html.erb within layouts/application (55.3ms)
+  Rendered shared/_header.html.erb (1.4ms)
+Completed 200 OK in 286ms (Views: 198.2ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/shots" for 127.0.0.1 at 2019-02-19 03:18:50 +0900
+Processing by ShotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MA2tS2mNwXkH1xFNYIOWHSm4ThbT9KotOr1YeOpo3TpPH5Xp5HHxFcO1PxCmBC4yHkHV9d2LRerWbdrfkr/ThQ==", "shot"=>{"user_shot"=>#<ActionDispatch::Http::UploadedFile:0x00007faf563649a0 @tempfile=#<Tempfile:/var/folders/fd/9vq0t2h14d7_jtxw_s_0qmz80000gn/T/RackMultipart20190219-99038-1xp9gu5.jpg>, @original_filename="nick-fewings-597515-unsplash.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"shot[user_shot]\"; filename=\"nick-fewings-597515-unsplash.jpg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"建築", "description"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}, "commit"=>"Create Shot"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shots_controller.rb:31
+  [1m[36mShot Create (3.4ms)[0m  [1m[32mINSERT INTO "shots" ("title", "description", "user_id", "user_shot", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "建築"], ["description", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["user_id", 1], ["user_shot", "nick-fewings-597515-unsplash.jpg"], ["created_at", "2019-02-18 18:18:51.798161"], ["updated_at", "2019-02-18 18:18:51.798161"]]
+  ↳ app/controllers/shots_controller.rb:31
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shots_controller.rb:31
+Redirected to http://localhost:3000/shots/1
+Completed 302 Found in 1578ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/shots/1" for 127.0.0.1 at 2019-02-19 03:18:51 +0900
+Processing by ShotsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShot Load (1.5ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Exists (10.6ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_type" = $1 AND "impressions"."impressionable_id" = $2 AND "impressions"."session_hash" = $3 LIMIT $4[0m  [["impressionable_type", "Shot"], ["impressionable_id", 1], ["session_hash", "500bbc0c24d9b891ac104e7e030ea04f"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Create (1.6ms)[0m  [1m[32mINSERT INTO "impressions" ("impressionable_type", "impressionable_id", "user_id", "controller_name", "action_name", "request_hash", "ip_address", "session_hash", "referrer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["impressionable_type", "Shot"], ["impressionable_id", 1], ["user_id", 1], ["controller_name", "shots"], ["action_name", "show"], ["request_hash", "8283331280435aa596eea19084fef14329684324bd8148b1b2d3ac49b94c2ddf"], ["ip_address", "127.0.0.1"], ["session_hash", "500bbc0c24d9b891ac104e7e030ea04f"], ["referrer", "http://localhost:3000/shots/new"], ["created_at", "2019-02-18 18:18:51.973012"], ["updated_at", "2019-02-18 18:18:51.973012"]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering shots/show.html.erb within layouts/application
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/show.html.erb:30
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/show.html.erb:36
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:40
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:49
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/show.html.erb:80
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/show.html.erb:109
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/show.html.erb:112
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (48.7ms)
+  Rendered shots/show.html.erb within layouts/application (166.0ms)
+  Rendered shared/_header.html.erb (2.2ms)
+Completed 200 OK in 533ms (Views: 393.4ms | ActiveRecord: 39.9ms)
+
+
+Started POST "/shots/1/comments" for 127.0.0.1 at 2019-02-19 03:19:00 +0900
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dZPhATBRmzz26YaptwycTT07dbfvNPWBpm8ev1fNyd6fS6TLYSfs1jahg2Ifw+8iPghX/bEih3W1qktj9aTLQQ==", "comment"=>{"name"=>"", "response"=>""}, "commit"=>"Leave a reply", "shot_id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mShot Load (2.1ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("name", "response", "created_at", "updated_at", "shot_id", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", ""], ["response", ""], ["created_at", "2019-02-18 18:19:00.558306"], ["updated_at", "2019-02-18 18:19:00.558306"], ["shot_id", 1], ["user_id", 1]]
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:8
+Redirected to http://localhost:3000/shots/1
+Completed 302 Found in 45ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/shots/1" for 127.0.0.1 at 2019-02-19 03:19:00 +0900
+Processing by ShotsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShot Load (3.3ms)[0m  [1m[34mSELECT  "shots".* FROM "shots" WHERE "shots"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shots_controller.rb:87
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mImpression Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_type" = $1 AND "impressions"."impressionable_id" = $2 AND "impressions"."session_hash" = $3 LIMIT $4[0m  [["impressionable_type", "Shot"], ["impressionable_id", 1], ["session_hash", "500bbc0c24d9b891ac104e7e030ea04f"], ["LIMIT", 1]]
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering shots/show.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/show.html.erb:30
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/show.html.erb:36
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:40
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/show.html.erb:49
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/show.html.erb:80
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/show.html.erb:109
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/show.html.erb:112
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  Rendered collection of comments/_comment.html.erb [1 times] (10.4ms)
+  Rendered comments/_form.html.erb (41.7ms)
+  Rendered shots/show.html.erb within layouts/application (87.2ms)
+  Rendered shared/_header.html.erb (3.2ms)
+Completed 200 OK in 522ms (Views: 496.8ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-19 03:19:03 +0900
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (3.4ms)
+  [1m[36mShot Load (0.4ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (32.9ms)
+  Rendered shared/_header.html.erb (2.3ms)
+Completed 200 OK in 317ms (Views: 302.5ms | ActiveRecord: 3.9ms)
+
+
