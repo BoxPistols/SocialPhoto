@@ -8086,3 +8086,35 @@ Completed 200 OK in 317ms (Views: 302.5ms | ActiveRecord: 3.9ms)
   ↳ bin/rails:4
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:4
+Started GET "/" for 127.0.0.1 at 2019-02-19 04:29:18 +0900
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started GET "/" for 127.0.0.1 at 2019-02-19 04:29:31 +0900
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by ShotsController#index as HTML
+  Rendering shots/index.html.erb within layouts/application
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/_hero.html.erb:1
+  Rendered shots/_hero.html.erb (34.4ms)
+  [1m[36mShot Load (2.1ms)[0m  [1m[34mSELECT "shots".* FROM "shots" ORDER BY created_at DESC[0m
+  ↳ app/views/shots/index.html.erb:21
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Shot"]]
+  ↳ app/views/shots/index.html.erb:41
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."shot_id" = $1[0m  [["shot_id", 1]]
+  ↳ app/views/shots/index.html.erb:49
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:58
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = $1 AND "votes"."votable_type" = $2 AND "votes"."vote_flag" = $3[0m  [["votable_id", 1], ["votable_type", "Shot"], ["vote_flag", true]]
+  ↳ app/views/shots/index.html.erb:67
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shots/index.html.erb:93
+  Rendered shots/index.html.erb within layouts/application (113.3ms)
+  Rendered shared/_header.html.erb (2.5ms)
+Completed 200 OK in 1762ms (Views: 1696.0ms | ActiveRecord: 27.9ms)
+
+
