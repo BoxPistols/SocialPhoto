@@ -9,11 +9,11 @@ class UserShotUploader < CarrierWave::Uploader::Base
   # else
   #   storage :file
   # end
-  storage :file if Rails.env.production?
-
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
+  # storage :file if Rails.env.production?
+  #
+  # def store_dir
+  #   "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  # end
 
   version :full do
     process resize_to_fit: [800, 600]
