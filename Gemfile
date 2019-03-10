@@ -10,7 +10,11 @@ gem 'rails', '~> 5.2.0'
 gem 'sqlite3', groups: [:test, :development]
 gem 'pg', group: :production
 
-gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp/all' # both FTP/SFTP
+# gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp/all' # both FTP/SFTP
+gem 'carrierwave'
+gem 'cloudinary'
+
+# gem 'heroku'
 
 gem 'rails_12factor', group: :production
 

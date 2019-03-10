@@ -49,6 +49,7 @@ GEM
     arel (9.0.0)
     autoprefixer-rails (9.4.7)
       execjs
+    aws_cf_signer (0.1.3)
     bcrypt (3.1.12)
     better_errors (2.5.1)
       coderay (>= 1.0.0)
@@ -69,10 +70,9 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    carrierwave-ftp (0.4.1)
-      carrierwave (>= 0.6.2)
-      double-bag-ftps (= 0.1.3)
-      net-sftp (~> 2.1.2)
+    cloudinary (1.11.1)
+      aws_cf_signer
+      rest-client
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -94,7 +94,6 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    double-bag-ftps (0.1.3)
     dry-inflector (0.1.2)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -343,9 +342,6 @@ GEM
     multi_json (1.13.1)
     multipart-post (2.0.0)
     nenv (0.3.0)
-    net-sftp (2.1.2)
-      net-ssh (>= 2.6.5)
-    net-ssh (5.1.0)
     netrc (0.11.0)
     nio4r (2.3.1)
     nokogiri (1.10.1)
@@ -502,7 +498,7 @@ DEPENDENCIES
   bootstrap (~> 4.1, >= 4.1.1)
   byebug
   carrierwave
-  carrierwave-ftp
+  cloudinary
   coffee-rails (~> 4.2)
   devise (~> 4.4, >= 4.4.1)
   fog
