@@ -13,6 +13,8 @@
 # Used by dotenv library to load environment variables.
 # .env
 
+public/uploads/shot/user_shot
+
 ## Specific to RubyMotion:
 .dat*
 .repl_history
@@ -53,4 +55,3 @@ build-iPhoneSimulator/
 
 log/
 log/development.log
-
